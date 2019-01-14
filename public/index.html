@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<title>DApp-example: Bank</title>
+	<style>
+		.flex {
+			display: flex;
+		}
+
+		.item {
+			flex: 1;
+			padding: 2rem;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="flex">
+		<div class="item">
+			<h3>銀行合約1</h3>
+			<h5 id="contractAddress">合約位址: </h5>
+			<input id="deployedContractAddressInput" type="text" placeholder="請輸入既有合約位址" />
+			<button id="loadDeployedContractButton" class="btn btn-primary">載入既有合約位址</button>
+			<button id="deployNewContractButton">部署新合約</button>
+
+			<hr>
+			<h3>刪除合約</h3>
+			<button id="killContractButton">刪除目前合約</button>
+
+			<hr>
+			<h3>帳戶登入</h3>
+			<select id="whoami"></select>
+			<button id="whoamiButton">登入</button>
+			<button id="copyButton">複製</button>
+
+			<hr>
+			<h3 id="accountStatus">帳戶狀態</h3>
+			<h5 id="ethBalance">以太帳戶餘額 (wei): </h5>
+			<h5 id="bankBalance">銀行ETH餘額 (wei): </h5>
+            <h5 id="coinBalance">NCCU COIN餘額: </h5>
+			<!--
+				TODO
+				...
+			-->
+			
+            
+			<hr>
+			<h3 id="updateCoin">更新餘額</h3>
+			<button id="update">執行</button>
+
+			<hr>
+			<h3>存款</h3>
+			<input id="deposit" type="number" placeholder="請輸入存款額度 (ether)">
+			<button id="depositButton">執行</button>
+
+			<hr>
+			<h3>提款</h3>
+			<input id="withdraw" type="number" placeholder="請輸入提款額度 (ether)">
+			<button id="withdrawButton">執行</button>
+
+			<hr>
+			<h3>轉帳 ETH</h3>
+			<input id="transferEtherTo" type="text" placeholder="請輸入轉帳對象">
+			<input id="transferEtherValue" type="number" placeholder="請輸入轉帳額度 (ether)">
+			<button id="transferEtherButton">執行</button>
+
+            <hr>
+			<h3>鑄NCCU Coin(帳戶請選擇合約的owner)</h3>
+			<input id="makeNccuCoin" type="number" placeholder="請輸入NCCU COIN金額">
+			<button id="makeNccuCoinButton">執行</button>
+            
+            <hr>
+			<h3>購買NCCU Coin</h3>
+			<input id="buyNccuCoin" type="number" placeholder="請輸入NCCU COIN金額">
+			<button id="buyNccuCoinButton">執行</button>
+            
+            <hr>
+			<h3>轉帳NCCU Coin</h3>
+			<input id="transferNccuTo" type="text" placeholder="請輸入轉帳對象">
+			<input id="transferNccuValue" type="number" placeholder="請輸入NCCU COIN金額">
+			<button id="transferNccuButton">執行</button>  
+			
+            <hr>
+            <h3>檢查Owner</h3>
+			<h5 id="ownerAccountValue">Owner帳戶: </h5>
+			<button id="ownerAccountButton">執行</button>  
+            
+            <hr>
+			<h3>轉移Owner</h3>
+			<input id="transferOwner" type="text" placeholder="請輸入對象">
+			<button id="transferOwnerButton">執行</button>
+            
+            <hr>
+			<h3>轉帳 ETH(進階功能)</h3>
+			<input id="ADtransferEtherTo" type="text" placeholder="請輸入轉帳對象">
+			<input id="ADtransferEtherValue" type="number" placeholder="請輸入轉帳額度 (ether)">
+			<button id="ADtransferEtherButton">執行</button>
+            <!--
+				TODO
+				...
+			-->
+			<a class="btn btn-primary" href="./login.html">Login</a>
+
+		</div>
+		<div class="item" style="width:500px;">
+			<h3>活動紀錄</h3>
+			<pre id="logger"></pre>
+		</div>
+	</div>
+
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+	<script src="javascripts/index.js"></script>
+</body>
+
+</html>
